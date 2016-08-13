@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title><![CDATA[GitHub工作流程]]></title>
+      <url>http://yoursite.com/2016/08/13/0001-GitHub%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B/</url>
+      <content type="html"><![CDATA[<h3 id="几个基本概念"><a href="#几个基本概念" class="headerlink" title="几个基本概念"></a>几个基本概念</h3><ul>
+<li>git 是一种版本控制系统，github 是一个网站，给用户提供git服务，这样用户就不用再自己架设git系统；</li>
+<li>在使用github时，本地和远程需要频繁打交道，因此本文所指github的工作流程是包含了远程和本地机器的，进行统一介绍，不再细分。</li>
+</ul>
+<h3 id="GitHub-整体工作流程"><a href="#GitHub-整体工作流程" class="headerlink" title="GitHub 整体工作流程"></a>GitHub 整体工作流程</h3><p><img src="http://image.beekka.com/blog/2014/bg2014061202.jpg" alt=""><br>(原图出处请见参考资料)<br><br>结合上图对github 实际工作流程进行解读。</p>
+<ul>
+<li>Remote ：表示github这个网站，它是远程的服务器，这上面存放的东西可以供小组成员共享。</li>
+<li>Repository ： 中文译为仓库，在github网站上我们也可以看见这个词，创建了一个仓库就相当于创建了一个项目。图中的仓库表示的是在本地机器上的，而不是在github上的。一个Repository中可以存放一个项目的不同版本。我们把这一串版本称为分支。通常一个项目会有master分支，developer分支，bug分支等。</li>
+<li>index ： 索引区。 另一种叫法是 stage，暂存区。我觉得第二种更为贴切。因为当我们从workspace区向repository提交作业时，实际上是先提交到index里，然后再提交到Repository中去。</li>
+<li>workspace ： 本地的工作空间，它负责展示当前操作的项目版本。比如，当切换本地repository的不同版本时，或 从remote上拉取项目时，都会在workspace上展示，它是可见的。</li>
+<li>add 和 commit ：在本地 workspace 中对项目进行任何的修改操作，均可以通过 add 操作添加到 index 中，我们可以多次执行 add 操作到 Index 里， 如果有多种不同文件的修改，需要多次执行add操作。 执行 commit 操作可以把 Index 里面的所有add进来的东西，一次性提交到 Repository。</li>
+<li>push ： 执行该操作可以将本地版本库的当前版本推送到远程服务器上，即github网站上。这里本地版本库的当前版本不一定是最新版本。在本地 Repository 会有一个指针HEAD， 它所指向的版本就是当前版本。</li>
+<li>pull 和 fetch 和 clone ：这三个操作都是将远程服务器的数据读取在本地。但各自的应用场景不同。clone 一般用于第一次从远程服务器拉取数据时，此时本地没有任何数据，需要从远程完整复制项目。fetch 操作会拉取远程仓库中的最新版本（最新都是指HEAD指针指向的版本）到本地仓库中，但它不会更新本地分支，也不会影响workspace的内容。如果再执行merge操作，则会更新本地的版本库，同时也会影响workspace。pull的作用就相当于 fetch＋merge操作。一般鼓励使用 fetch＋merge的形势。</li>
+<li>checkout ： 用于切换分支。例如本地Repository中有master分支，还有feature分支，当前HEAD指向哪个分支的版本，则workspace就显示哪个版本的工作状态。</li>
+</ul>
+<p>以上就是关于GitHub工作模型的介绍，上面的图形所画的工作流程就是我们最常用的形式。</p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ol>
+<li><a href="http://www.ruanyifeng.com/blog/2014/06/git_remote.html?bsh_bid=458247941" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2014/06/git_remote.html?bsh_bid=458247941</a></li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[滕王阁序]]></title>
       <url>http://yoursite.com/2016/07/30/%E6%BB%95%E7%8E%8B%E9%98%81%E5%BA%8F/</url>
       <content type="html"><![CDATA[<p>本文章供测试使用 : )</p>
