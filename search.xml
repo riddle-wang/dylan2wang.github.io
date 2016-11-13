@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title><![CDATA[在IDEA中运行LinearRegression例子]]></title>
+      <url>http://yoursite.com/2016/11/13/%E5%9C%A8IDEA%E4%B8%8A%E8%BF%90%E8%A1%8CLinearRegression%E4%BE%8B%E5%AD%90/</url>
+      <content type="html"><![CDATA[<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><ol>
+<li>运行的示例程序是saprk自带的ml库中的（还有一个mllib库，它比ml库旧，mllib库针对RDDs，ml库针对DF）；</li>
+<li>直接在终端运行spark-example程序和在idea中运行，本质上是一样的，但有写细节的操作会导致出错；</li>
+</ol>
+<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><p>创建scala工程，选择的参数如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">scala version 2.10</div><div class="line">jdk 1.8</div></pre></td></tr></table></figure>
+<p>编写build.sbt 文件，内容如下。其中，每行的空格是必须的。修改完sbt文件后不要忘记刷新，以便系统可以更新依赖包。（此外，scalaVersion的版本号和spark的版本号是有一定的对应关系的，不可以随便写，否则会产生错误。官网之前说1.6.2 版本的spark可以匹配任意版本2.10.x 的scala,但实际的操作似乎并不是这样，这部分以后再去研究。）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">name := &quot;LinearRegression&quot;</div><div class="line"></div><div class="line">version := &quot;1.0&quot;</div><div class="line"></div><div class="line">scalaVersion := &quot;2.10.5&quot;</div><div class="line"></div><div class="line">libraryDependencies += &quot;org.apache.spark&quot; %% &quot;spark-core&quot; % &quot;1.6.0&quot;</div></pre></td></tr></table></figure>
+<p>在src/main/scala 下创建包 org.apache.spark.examples.ml 然后复制spark安装包下的example示例程序，从ml库中选择。分别是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">DecisionTreeExample.scala</div><div class="line">LinearRegressionExample.scala</div></pre></td></tr></table></figure>
+<font color="red">为什么要创建org.apache.spark.examples.ml 包？</font>
+
+<p>目的是为了尽可能满足copy进来的两个文件运行所需要的环境。起初我并没有创建包，而是选择把copy的两个文件的package语句删掉，但结果是DecisionTreeExample里的一个函数一值无法找到，于是创建了包并加上package语句，终于不再报错。</p>
+<p>现在，程序里肯定还会报很多错，那是因为还有两个重要的lib没有导入工程。点击 file-&gt;project structure 然后右下方向，scala laibrary 点那个 + ，添加如下两个jar包（本机目录：/Users/Dong/Documents/Spark/spark-1.6.2-bin-hadoop2.6/lib）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">spark-assembly-1.6.2-hadoop2.6.0.jar</div><div class="line">spark-examples-1.6.2-hadoop2.6.0.jar</div></pre></td></tr></table></figure>
+<p>添加完后，保存，即可。</p>
+<p>此时静态的程序代码应该不会报错了。但还不可以运行。因为笔者也是刚学习spark，所以，没有搭建任何的集群，必需人为指定程序spark是在本机模式下运行的，否则程序会报错（大概是找不到 master url 的错）。</p>
+<p>点击 run-&gt;edit configurations 配置以下参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">VM options: -Dspark.master=local</div><div class="line"></div><div class="line">Program arguments: </div><div class="line">--regParam</div><div class="line">0.15</div><div class="line">--elasticNetParam</div><div class="line">1.0</div><div class="line">/Users/Dong/Documents/Spark/spark-1.6.2-bin-hadoop2.6/data/mllib/sample_linear_regression_data.txt</div></pre></td></tr></table></figure>
+<p>至此，程序已经可以运行成功了。</p>
+<p>附上运行结果图：<br><img src="https://github.com/dylan2wang/dylan2wang.github.io/tree/master/images/articleImages/001.png" alt=""></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[GitHub工作流程]]></title>
       <url>http://yoursite.com/2016/08/13/0001-GitHub%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B/</url>
       <content type="html"><![CDATA[<h3 id="几个基本概念"><a href="#几个基本概念" class="headerlink" title="几个基本概念"></a>几个基本概念</h3><ul>
