@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="正则表达式," />
 
 
 
@@ -84,15 +84,25 @@
 
 
 
-<meta name="description" content="To understand the world, and make it better">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dylan Wang 的个人主页">
-<meta property="og:url" content="http://yoursite.com/tags/文学/index.html">
+<meta name="description" content="引入的库
+1import re
+常用函数
+12345671. compile(pattern,flags=0) // 对正则表达式编译，并返回一个regex对象，flags石可选的标志符下同，此函数用于提升编译效率2. match(pattern,string,flags=0) // 考察字符串整体是否匹配，若成功返回匹配对象，否则返回None。（必需是整个字符串匹配才算成功）3. search(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python正则表达式初探">
+<meta property="og:url" content="http://yoursite.com/2016/11/25/Python正则表达式初探/index.html">
 <meta property="og:site_name" content="Dylan Wang 的个人主页">
-<meta property="og:description" content="To understand the world, and make it better">
+<meta property="og:description" content="引入的库
+1import re
+常用函数
+12345671. compile(pattern,flags=0) // 对正则表达式编译，并返回一个regex对象，flags石可选的标志符下同，此函数用于提升编译效率2. match(pattern,string,flags=0) // 考察字符串整体是否匹配，若成功返回匹配对象，否则返回None。（必需是整个字符串匹配才算成功）3. search(">
+<meta property="og:updated_time" content="2016-11-25T14:19:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dylan Wang 的个人主页">
-<meta name="twitter:description" content="To understand the world, and make it better">
+<meta name="twitter:title" content="Python正则表达式初探">
+<meta name="twitter:description" content="引入的库
+1import re
+常用函数
+12345671. compile(pattern,flags=0) // 对正则表达式编译，并返回一个regex对象，flags石可选的标志符下同，此函数用于提升编译效率2. match(pattern,string,flags=0) // 考察字符串整体是否匹配，若成功返回匹配对象，否则返回None。（必需是整个字符串匹配才算成功）3. search(">
 
 
 
@@ -113,9 +123,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/文学/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/11/25/Python正则表达式初探/"/>
 
-  <title> 标签: 文学 | Dylan Wang 的个人主页 </title>
+  <title> Python正则表达式初探 | Dylan Wang 的个人主页 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -146,7 +156,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -267,53 +277,230 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        文学
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Python正则表达式初探
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-25T22:18:33+08:00" content="2016-11-25">
+              2016-11-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/25/Python正则表达式初探/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/25/Python正则表达式初探/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/11/25/Python正则表达式初探/" class="leancloud_visitors" data-flag-title="Python正则表达式初探">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p><strong>引入的库</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import re</div></pre></td></tr></table></figure>
+<p><strong>常用函数</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">1. compile(pattern,flags=0) // 对正则表达式编译，并返回一个regex对象，flags石可选的标志符下同，此函数用于提升编译效率</div><div class="line">2. match(pattern,string,flags=0) // 考察字符串整体是否匹配，若成功返回匹配对象，否则返回None。（必需是整个字符串匹配才算成功）</div><div class="line">3. search(pattern,string,flags=0) // 考察字符串中是否包含要匹配的内容，遇到第一个满足要求的就返回匹配对象，否则返回None</div><div class="line">4. findall(pattern,string,flags=0) // 在字符串中，搜索所有目标的（非重复？）出现，返回一个list</div><div class="line">5. finditer(pattern,string,flags=0) // 功能和findall 类型，只不过是返回迭代器</div><div class="line">6. split(pattern,string,max=0) // 按照pattern中的分隔符，把字符串分割成一个列表，最多分割max次，默认0表示分割所有匹配的地方</div><div class="line">7. sub(pattern, replace, string, max=0) // 把字符串中所有匹配的地方替换成replace，最多替换max个地方，默认0表示替换所有地方</div></pre></td></tr></table></figure>
+<p>匹配对象的方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1. group(num=0) // (默认num=0)返回全部匹配对象，num等于其它值时，返回指定编号的匹配对象</div><div class="line">2. groups() // 返回一个包含全部匹配的子组的元组（如果没有成功匹配，就返回一个空元组）</div></pre></td></tr></table></figure>
+<p><strong>有关使用complie</strong></p>
+<p>使用compile与否，在调用regex函数上，没有形式上的差别。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># 不使用compile</div><div class="line">pattern = &apos;[a-z]&apos;</div><div class="line">str = &apos;012hello2&apos;</div><div class="line">ret = re.search(pattern,str)</div><div class="line"></div><div class="line"># 使用compile</div><div class="line">r = re.compile(pattern)</div><div class="line">ret = re.search(r,str)</div></pre></td></tr></table></figure>
+<p>区别在于，compile 可以提前编译好正则表达式，提高了效率。不然每次调用正则表达式都会编译一次（实际上python模块函数会对已编译的对象进行缓存，但即使这样，使用compile仍然可以节省开销）。</p>
+<p><strong>常用正则表达式的写法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">1. &apos;[A-Za-z0-9]&apos; // 匹配所有的大小写字母和数字，只匹配单个字符</div><div class="line">2. &apos;[A-Za-0-9]*&apos; // 匹配所有的大小写字母和数字，0次或多次</div><div class="line">3. &apos;[A-Za-0-9]+&apos; // 匹配所有的大小写字母和数字，1次或多次</div><div class="line">4. &apos;[A-Za-0-9]？&apos; // 匹配所有的大小写字母和数字，0次或多次</div><div class="line">5. &apos;[A-Za-0-9]&#123;3&#125;&apos; // 匹配所有的大小写字母和数字，3次</div><div class="line">6. &apos;[A-Za-0-9]&#123;3,6&#125;&apos; // 匹配所有的大小写字母和数字，3次至6次</div><div class="line">7. &apos;^hello&apos; // 匹配字符串的开头</div><div class="line">8. &apos;hello$&apos; // 匹配字符串的结尾</div><div class="line">9. &apos;.&apos; // 匹配任意字符</div><div class="line">10. &apos;[abc123]&apos; // 匹配字符数组中的任意单个字符</div><div class="line">11. &apos;[^abc123]&apos;  or &apos;[^a-z]&apos; // 不匹配此字符集中出现的任意一个，包括范围</div></pre></td></tr></table></figure>
+<p><strong>其它说明</strong></p>
+<ol>
+<li>如果正则表达式中出现了特殊字符，使用 ‘\’ 进行转义;</li>
+</ol>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/07/30/滕王阁序/" itemprop="url">
-              
-                <span itemprop="name">滕王阁序</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>如果你觉得这篇文章对你有帮助，想要鼓励作者，可以选择小额捐赠 ^_^</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat-reward-image.jpg" alt="Dylan Wang WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay-reward-image.jpg" alt="Dylan Wang Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-07-30T17:36:02+08:00"
-              content="2016-07-30" >
-          07-30
-        </time>
-      </div>
 
-    </header>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/正则表达式/" rel="tag">#正则表达式</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/24/Scala函数式编程基本概念理解/" rel="next" title="Scala函数式编程基本概念理解">
+                <i class="fa fa-chevron-left"></i> Scala函数式编程基本概念理解
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/11/25/Python正则表达式初探/"
+     data-title="Python正则表达式初探"
+     data-content=""
+     data-url="http://yoursite.com/2016/11/25/Python正则表达式初探/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
 
           </div>
           
 
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/11/25/Python正则表达式初探/"
+           data-title="Python正则表达式初探" data-url="http://yoursite.com/2016/11/25/Python正则表达式初探/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -333,8 +520,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://secure.gravatar.com/avatar/da9f0baa50fee6918ba9f0151132cd64"
@@ -427,6 +623,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -530,6 +737,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 

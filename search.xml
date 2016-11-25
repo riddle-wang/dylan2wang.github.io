@@ -4,6 +4,28 @@
   
     
     <entry>
+      <title><![CDATA[Python正则表达式初探]]></title>
+      <url>http://yoursite.com/2016/11/25/Python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%88%9D%E6%8E%A2/</url>
+      <content type="html"><![CDATA[<p><strong>引入的库</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import re</div></pre></td></tr></table></figure>
+<p><strong>常用函数</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">1. compile(pattern,flags=0) // 对正则表达式编译，并返回一个regex对象，flags石可选的标志符下同，此函数用于提升编译效率</div><div class="line">2. match(pattern,string,flags=0) // 考察字符串整体是否匹配，若成功返回匹配对象，否则返回None。（必需是整个字符串匹配才算成功）</div><div class="line">3. search(pattern,string,flags=0) // 考察字符串中是否包含要匹配的内容，遇到第一个满足要求的就返回匹配对象，否则返回None</div><div class="line">4. findall(pattern,string,flags=0) // 在字符串中，搜索所有目标的（非重复？）出现，返回一个list</div><div class="line">5. finditer(pattern,string,flags=0) // 功能和findall 类型，只不过是返回迭代器</div><div class="line">6. split(pattern,string,max=0) // 按照pattern中的分隔符，把字符串分割成一个列表，最多分割max次，默认0表示分割所有匹配的地方</div><div class="line">7. sub(pattern, replace, string, max=0) // 把字符串中所有匹配的地方替换成replace，最多替换max个地方，默认0表示替换所有地方</div></pre></td></tr></table></figure>
+<p>匹配对象的方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1. group(num=0) // (默认num=0)返回全部匹配对象，num等于其它值时，返回指定编号的匹配对象</div><div class="line">2. groups() // 返回一个包含全部匹配的子组的元组（如果没有成功匹配，就返回一个空元组）</div></pre></td></tr></table></figure>
+<p><strong>有关使用complie</strong></p>
+<p>使用compile与否，在调用regex函数上，没有形式上的差别。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># 不使用compile</div><div class="line">pattern = &apos;[a-z]&apos;</div><div class="line">str = &apos;012hello2&apos;</div><div class="line">ret = re.search(pattern,str)</div><div class="line"></div><div class="line"># 使用compile</div><div class="line">r = re.compile(pattern)</div><div class="line">ret = re.search(r,str)</div></pre></td></tr></table></figure>
+<p>区别在于，compile 可以提前编译好正则表达式，提高了效率。不然每次调用正则表达式都会编译一次（实际上python模块函数会对已编译的对象进行缓存，但即使这样，使用compile仍然可以节省开销）。</p>
+<p><strong>常用正则表达式的写法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">1. &apos;[A-Za-z0-9]&apos; // 匹配所有的大小写字母和数字，只匹配单个字符</div><div class="line">2. &apos;[A-Za-0-9]*&apos; // 匹配所有的大小写字母和数字，0次或多次</div><div class="line">3. &apos;[A-Za-0-9]+&apos; // 匹配所有的大小写字母和数字，1次或多次</div><div class="line">4. &apos;[A-Za-0-9]？&apos; // 匹配所有的大小写字母和数字，0次或多次</div><div class="line">5. &apos;[A-Za-0-9]&#123;3&#125;&apos; // 匹配所有的大小写字母和数字，3次</div><div class="line">6. &apos;[A-Za-0-9]&#123;3,6&#125;&apos; // 匹配所有的大小写字母和数字，3次至6次</div><div class="line">7. &apos;^hello&apos; // 匹配字符串的开头</div><div class="line">8. &apos;hello$&apos; // 匹配字符串的结尾</div><div class="line">9. &apos;.&apos; // 匹配任意字符</div><div class="line">10. &apos;[abc123]&apos; // 匹配字符数组中的任意单个字符</div><div class="line">11. &apos;[^abc123]&apos;  or &apos;[^a-z]&apos; // 不匹配此字符集中出现的任意一个，包括范围</div></pre></td></tr></table></figure>
+<p><strong>其它说明</strong></p>
+<ol>
+<li>如果正则表达式中出现了特殊字符，使用 ‘\’ 进行转义;</li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Scala函数式编程基本概念理解]]></title>
       <url>http://yoursite.com/2016/11/24/Scala%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%90%86%E8%A7%A3/</url>
       <content type="html"><![CDATA[<h3 id="示例一"><a href="#示例一" class="headerlink" title="示例一"></a>示例一</h3><p>对于如下的操作</p>
